@@ -55,4 +55,19 @@ public class GreetingService implements IGreetingService {
     public List<User> getOverallList() {
         return greetingRepository.findAll();
     }
+
+    /**+
+     *
+     * @purpose : To modify the data
+     * @param id
+     * @param user
+     * @return modified user
+     */
+    @Override
+    public User getUserAfterModification(int id, User user) {
+        User update = greetingRepository.findById(id).get();
+        update.setFirstName(user.getFirstName());
+        update.setLastName(user.getLastName());
+        return greetingRepository.save(update);
+    }
 }

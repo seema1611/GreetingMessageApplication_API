@@ -48,4 +48,16 @@ public class GreetingController {
     public List<User> getOverallUserList() {
         return greetingService.getOverallList();
     }
+
+    /**+
+     *
+     * @purpose : Used to modify the data
+     * @param id
+     * @param user
+     * @return
+     */
+    @PutMapping
+    public User getUserModified(@RequestParam(value = "id") int id, @RequestBody User user) {
+        return greetingService.getUserAfterModification(id, user);
+    }
 }

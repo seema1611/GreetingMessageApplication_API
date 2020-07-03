@@ -30,4 +30,13 @@ public interface IGreetingService {
      * @return
      */
     List<User> getOverallList();
+
+    /**+
+     *
+     * @purpose : To modify the user
+     * @param id
+     * @param user
+     * @return modified user
+     */
+    User getUserAfterModification(int id, User user);
 }
