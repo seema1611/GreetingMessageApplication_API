@@ -1,5 +1,5 @@
 /*********************************************************************
- * @purpose : Controller used for handling the request and response
+ * @purpose : Greeting Controller used for handling the request and response
  * @author  : Seema Rajpure
  * @Date    : 03/07/2020
  *********************************************************************/
@@ -26,5 +26,15 @@ public class GreetingController {
     @PostMapping
     public User addUser (@RequestBody User user) {
         return greetingService.addUser(user);
+    }
+
+    /**+
+     * @purpose : Used to retire data based on id
+     * @param id
+     * @return
+     */
+    @GetMapping
+    public User getGreetingById(@RequestParam(value = "id") int id) {
+        return greetingService.getById(id);
     }
 }

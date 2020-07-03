@@ -5,6 +5,7 @@
  *********************************************************************/
 package com.greetingapplication.service.implementors;
 
+import com.greetingapplication.exception.GreetingException;
 import com.greetingapplication.model.User;
 import com.greetingapplication.repository.IGreetingRepository;
 import com.greetingapplication.service.IGreetingService;
@@ -30,5 +31,17 @@ public class GreetingService implements IGreetingService {
     public User addUser(User user) {
         user.setRegisterDate(LocalDateTime.now());
         return greetingRepository.save(user);
+    }
+
+    /**+
+     *
+     * @purpose : To retire all data based on id
+     * @param id
+     * @return user
+     */
+    @Override
+    public User getById(int id) {
+        return greetingRepository.findById(id)
+                .orElseThrow(() -> new GreetingException("No Greeting Found", GreetingException.ExceptionType.USER_NOT_FOUND));
     }
 }

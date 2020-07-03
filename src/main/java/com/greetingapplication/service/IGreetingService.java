@@ -14,4 +14,12 @@ public interface IGreetingService {
      * @return user
      */
     User addUser(User user);
+
+    /**+
+     *
+     * @Purpose: To pass id to service
+     * @param id
+     * @return
+     */
+    User getById(int id);
 }
