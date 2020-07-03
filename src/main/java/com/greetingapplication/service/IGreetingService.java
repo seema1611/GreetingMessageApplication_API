@@ -39,4 +39,12 @@ public interface IGreetingService {
      * @return modified user
      */
     User getUserAfterModification(int id, User user);
+
+    /**+
+     *
+     * @purpose : To delete the user
+     * @param id
+     * @return user
+     */
+    List<User> getUpdatedListAfterDeletionById(int id);
 }

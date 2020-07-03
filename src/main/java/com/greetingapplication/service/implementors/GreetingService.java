@@ -70,4 +70,18 @@ public class GreetingService implements IGreetingService {
         update.setLastName(user.getLastName());
         return greetingRepository.save(update);
     }
+
+    /**+
+     *
+     * @purpose : To delete the user
+     * @param id
+     * @return all user details display
+     */
+    @Override
+    public List<User> getUpdatedListAfterDeletionById(int id) {
+        User user = greetingRepository.findById(id)
+                .orElseThrow(() -> new GreetingException("No Greeting Found", GreetingException.ExceptionType.USER_NOT_FOUND));;
+        greetingRepository.delete(user);
+        return greetingRepository.findAll();
+    }
 }

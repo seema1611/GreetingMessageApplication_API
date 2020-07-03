@@ -60,4 +60,15 @@ public class GreetingController {
     public User getUserModified(@RequestParam(value = "id") int id, @RequestBody User user) {
         return greetingService.getUserAfterModification(id, user);
     }
+
+    /**+
+     *
+     * @purpose : Used to delete the data
+     * @param id
+     * @return
+     */
+    @DeleteMapping
+    public List<User> deleteByIdAndGetUpdatedList(@RequestParam(value = "id") int id) {
+        return greetingService.getUpdatedListAfterDeletionById(id);
+    }
 }
