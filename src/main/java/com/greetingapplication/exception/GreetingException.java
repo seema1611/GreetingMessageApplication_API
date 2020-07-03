@@ -1,9 +1,3 @@
-/*********************************************************************
- * @purpose : Greeting Exception used for handling the exception
- * @author  : Seema Rajpure
- * @Date    : 03/07/2020
- *********************************************************************/
-
 package com.greetingapplication.exception;
 
 public class GreetingException extends RuntimeException {
@@ -19,5 +13,3 @@ public class GreetingException extends RuntimeException {
         this.type = type;
     }
 }
-
-

@@ -7,6 +7,8 @@ package com.greetingapplication.service;
 
 import com.greetingapplication.model.User;
 
+import java.util.List;
+
 public interface IGreetingService {
     /**+
      * @Purpose: To pass data to service
@@ -19,7 +21,13 @@ public interface IGreetingService {
      *
      * @Purpose: To pass id to service
      * @param id
-     * @return
+     * @return user
      */
     User getById(int id);
+
+    /**+
+     * @purpose : To passed user
+     * @return
+     */
+    List<User> getOverallList();
 }

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class GreetingService implements IGreetingService {
@@ -43,5 +44,15 @@ public class GreetingService implements IGreetingService {
     public User getById(int id) {
         return greetingRepository.findById(id)
                 .orElseThrow(() -> new GreetingException("No Greeting Found", GreetingException.ExceptionType.USER_NOT_FOUND));
+    }
+
+    /**+
+     *
+     * @purpose : To retire all user list
+     * @return
+     */
+    @Override
+    public List<User> getOverallList() {
+        return greetingRepository.findAll();
     }
 }

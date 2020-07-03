@@ -10,6 +10,8 @@ import com.greetingapplication.service.IGreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/greeting")
 public class GreetingController {
@@ -31,10 +33,19 @@ public class GreetingController {
     /**+
      * @purpose : Used to retire data based on id
      * @param id
-     * @return
+     * @return user
      */
     @GetMapping
-    public User getGreetingById(@RequestParam(value = "id") int id) {
+    public User getUserById(@RequestParam(value = "id") int id) {
         return greetingService.getById(id);
+    }
+
+    /**+
+     * @purpose : Used to retire data
+     * @return
+     */
+    @GetMapping("alluser")
+    public List<User> getOverallUserList() {
+        return greetingService.getOverallList();
     }
 }
