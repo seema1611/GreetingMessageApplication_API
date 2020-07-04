@@ -1,8 +1,8 @@
-/*********************************************************************
+/****************************************************************************
  * @purpose : Greeting Controller used for handling the request and response
  * @author  : Seema Rajpure
  * @Date    : 03/07/2020
- *********************************************************************/
+ ****************************************************************************/
 package com.greetingapplication.controller;
 
 import com.greetingapplication.model.User;
@@ -42,7 +42,7 @@ public class GreetingController {
 
     /**+
      * @purpose : Used to retire data
-     * @return
+     * @return alluser
      */
     @GetMapping("alluser")
     public List<User> getOverallUserList() {
@@ -54,7 +54,7 @@ public class GreetingController {
      * @purpose : Used to modify the data
      * @param id
      * @param user
-     * @return
+     * @return user
      */
     @PutMapping
     public User getUserModified(@RequestParam(value = "id") int id, @RequestBody User user) {
@@ -65,7 +65,7 @@ public class GreetingController {
      *
      * @purpose : Used to delete the data
      * @param id
-     * @return
+     * @return Remaining user list
      */
     @DeleteMapping
     public List<User> deleteByIdAndGetUpdatedList(@RequestParam(value = "id") int id) {

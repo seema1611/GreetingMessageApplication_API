@@ -5,6 +5,8 @@
  *********************************************************************/
 package com.greetingapplication.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -14,13 +16,13 @@ public class User {
 
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private int id;
+    public int id;
 
-    @Column(unique = true)
-    private String firstName;
+    @NotNull
+    public String firstName;
 
-    @Column(unique = true)
-    private String lastName;
+    @NotNull
+    public String lastName;
 
     public LocalDateTime registerDate;
 

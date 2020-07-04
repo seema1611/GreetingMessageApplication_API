@@ -17,7 +17,6 @@ import java.util.List;
 
 @Service
 public class GreetingService implements IGreetingService {
-    private static final String template = "Hello  %s !";
 
     @Autowired
     private IGreetingRepository greetingRepository;
@@ -42,8 +41,7 @@ public class GreetingService implements IGreetingService {
      */
     @Override
     public User getById(int id) {
-        return greetingRepository.findById(id)
-                .orElseThrow(() -> new GreetingException("No Greeting Found", GreetingException.ExceptionType.USER_NOT_FOUND));
+        return greetingRepository.findById(id).orElseThrow(() -> new GreetingException("Greeting Not found"));
     }
 
     /**+
@@ -79,8 +77,7 @@ public class GreetingService implements IGreetingService {
      */
     @Override
     public List<User> getUpdatedListAfterDeletionById(int id) {
-        User user = greetingRepository.findById(id)
-                .orElseThrow(() -> new GreetingException("No Greeting Found", GreetingException.ExceptionType.USER_NOT_FOUND));;
+        User user = greetingRepository.findById(id).orElseThrow(() -> new GreetingException("Greeting Not found"));
         greetingRepository.delete(user);
         return greetingRepository.findAll();
     }
