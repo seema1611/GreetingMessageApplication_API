@@ -1,18 +1,15 @@
 /****************************************************************************
- * @purpose : Greeting exception used for handling the exception
+ * @purpose : Greeting exception used for handling the custom exception
  * @author  : Seema Rajpure
  * @Date    : 03/07/2020
  ****************************************************************************/
-
 package com.greetingapplication.exception;
 
 public class GreetingException extends RuntimeException {
 
-    public enum ExceptionType {
-        USER_NOT_FOUND;
-    }
+    public String message;
 
     public GreetingException(String message) {
-        super(message);
+        this.message = message;
     }
 }

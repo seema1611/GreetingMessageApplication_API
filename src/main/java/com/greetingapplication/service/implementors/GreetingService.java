@@ -41,7 +41,7 @@ public class GreetingService implements IGreetingService {
      */
     @Override
     public User getById(int id) {
-        return greetingRepository.findById(id).orElseThrow(() -> new GreetingException("Greeting Not found"));
+        return greetingRepository.findById(id).orElseThrow(() ->new GreetingException("Greeting Not found"));
     }
 
     /**+
